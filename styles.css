@@ -1,13 +1,32 @@
 body{
+    height: 100%;
     background-color: #121212;
     color: white;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"
 }
+h1{
+    margin: 24px;
+    padding: 32px;
+    background-color: #212121;
+}
 .container{
     display: flex;
     justify-content: flex-start;
+    
+}
+.footer{
+    /* Look at previous assignments because i forgot how to do this properly */
+    position: absolute;
+    bottom: 0;
 }
 .controls{
-    /* I dont know if i should apply styles here or in scripts file yet */
-    /* Apply the following: display:flex| align-items: center */
+    height: 100%;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #212121;
+    margin: 24px;
+    position: fixed;
+    
 }
