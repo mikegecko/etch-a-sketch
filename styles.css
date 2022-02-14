@@ -3,3 +3,11 @@ body{
     color: white;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"
 }
+.container{
+    display: flex;
+    justify-content: flex-start;
+}
+.controls{
+    /* I dont know if i should apply styles here or in scripts file yet */
+    /* Apply the following: display:flex| align-items: center */
+}
