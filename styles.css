@@ -55,8 +55,25 @@ button:hover{
     
     gap: 32px;
 }
+.slide-container{
+    text-align: center;
+    width: 100%;
+}
+.slider{
+    appearance: none;
+    height: 8px;
+    background: white;
+    width: 100%;
+    outline: none;
+}
+.slider::-webkit-slider-thumb{
+    width: 24px;
+    height: 24px;
+    appearance: none;
+    background: #7B8794;
+}
 .grid-container{
-    margin-top: 24px;
+    margin: 24px;
     width: 900px;
     height: 900px;
     background-color: #212121;
