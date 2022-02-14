@@ -65,12 +65,14 @@ button:hover{
     background: white;
     width: 100%;
     outline: none;
+    border-radius: 4px;
 }
 .slider::-webkit-slider-thumb{
     width: 24px;
     height: 24px;
     appearance: none;
     background: #7B8794;
+    border-radius: 50%;
 }
 .grid-container{
     margin: 24px;
