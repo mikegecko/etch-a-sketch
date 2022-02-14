@@ -14,13 +14,16 @@ button{
     background-color: #616E7C;
     border: none;
     color: white;
-    padding: 15px 32px;
+    width: 100%;
+    padding: 10px 20px;
     font-size: 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     border-radius: 8px;
     transition-duration: .1s;
+    white-space: nowrap;
+    
 }
 button:hover{
     background-color: #7B8794;
@@ -32,22 +35,29 @@ button:hover{
     
 }
 .footer{
-    /* Look at previous assignments because i forgot how to do this properly */
+    /*i forgot how to do this properly */
     position: absolute;
     bottom: 0;
 }
 .controls{
+    
     border-radius: 8px;
     font-size: 26px;
     font-weight: bold;
-    height: 100%;
-    width: 260px;
+    width: 200px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: #212121;
     margin: 24px;
-    position: fixed;
-    gap: 50px;
     
+    gap: 32px;
+}
+.grid-container{
+    margin-top: 24px;
+    width: 900px;
+    height: 900px;
+    background-color: #212121;
 }
