@@ -1,14 +1,15 @@
-const btnClear = document.querySelector('#clear');
-const btnErase = document.querySelector('#erase');;
-const btnColor = document.querySelector('#colormd');;
-const btnRainbow = document.querySelector('#rainbowmd');;
+const buttons = document.querySelectorAll('.btn');
 
 //Adding event handlers
+buttons.forEach(element => {
+    element.addEventListener('click', btnHandler)
+});
 
-
+function btnHandler(event){
+    console.log(event.target.id);
+}
 
 //Add grid components
 
 //Add functions for clear|eraser|colormode|rainbowmode|colorpicker
-
 
