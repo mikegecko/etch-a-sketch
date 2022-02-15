@@ -23,6 +23,10 @@ function eraseGrid(){
 
 function sliderHandler(event){
     sliderOutput.innerHTML = slider.value + " x " + slider.value;
+    
+    /* Issue: Using the slider conitunes to add to grid 
+        Solution: Remove all grid items then add them back using new gridSize */
+                           
     createGrid(slider.value);
 }
 
@@ -46,11 +50,20 @@ function btnHandler(event){
     }
 }
 
+function gridHandler(event){
+    console.log("click");
+    event.target.style.backgroundColor = "black";
+}
+
 function createGrid(gridSize){
     gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     for(let i = 0; i < gridSize ** 2 ; i++){
         let newDiv = document.createElement('div');
+        newDiv.classList.add('grid-item');
         newDiv.style.backgroundColor = "white";
+        newDiv.style.userDrag = "none";
+        newDiv.style.userDrag = "none";
         gridContainer.appendChild(newDiv);
+        newDiv.addEventListener('mousedown', gridHandler);
     }
 }
