@@ -18,7 +18,7 @@ colorMode();
 createGrid(slider.value);
 
 
-//Add functions for ✓clear|erase|✓colormode|✓rainbowmode|colorpicker
+//Add functions for ✓clear|✓erase|✓colormode|✓rainbowmode|colorpicker
 function clearGrid(){
     let child = gridContainer.lastElementChild;
     while(child){
@@ -27,14 +27,10 @@ function clearGrid(){
     }
     createGrid(slider.value);
 }
-function eraseGrid(){
-
-}
 
 function sliderHandler(event){
     sliderOutput.innerHTML = slider.value + " x " + slider.value;
     clearGrid();               
-    //createGrid(slider.value);
 }
 
 function btnHandler(event){

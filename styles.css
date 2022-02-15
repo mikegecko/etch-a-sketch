@@ -2,19 +2,22 @@ body{
     height: 100%;
     background-color: #121212;
     color: white;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 h1{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items:center;
     margin: 24px;
     padding: 32px;
     background-color: #212121;
     border-radius: 8px;
-    max-width: 1148px;
-    /*Figure out why this thing wont stay centered*/
+    width: 1164px;
 }
 .container{
     display: flex;
