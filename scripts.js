@@ -1,7 +1,10 @@
 const buttons = document.querySelectorAll('.btn');
 const slider = document.querySelector('.slider');
 const sliderOutput = document.querySelector('.slider-value');
-const gridContainer = document.querySelector('.grid-container')
+const gridContainer = document.querySelector('.grid-container');
+const colorBtn = document.querySelector('#color');
+const rainbowBtn = document.querySelector('#rainbow');
+let colorToggle = 0;
 
 //Adding event handlers
 slider.addEventListener('input', sliderHandler);
@@ -54,19 +57,21 @@ function btnHandler(event){
 }
 
 function colorMode(event){
-    const colorBtn = document.querySelector('#color');
-    const rainbowBtn = document.querySelector('#rainbow');
+    
     if(event == null || event == undefined){
         colorBtn.style.backgroundColor = '#1c3550';
+        colorToggle = 0;
     }
     else{
         if(event.target.id == 'color'){
             event.target.style.backgroundColor = '#1c3550';
             rainbowBtn.style.backgroundColor = '#616E7C';
+            colorToggle = 0;
         }
-        if(event.target.id == 'rainbow'){
+        else if(event.target.id == 'rainbow'){
             event.target.style.backgroundColor = '#1c3550';
             colorBtn.style.backgroundColor = '#616E7C';
+            colorToggle = 1;
         }
         else{
             console.log('ERROR');
@@ -76,8 +81,17 @@ function colorMode(event){
 }
 
 function gridHandler(event){
-    console.log("click");
-    event.target.style.backgroundColor = "black";
+    if(colorToggle == 0){
+        console.log("click");
+        event.target.style.backgroundColor = "black";
+    }
+    else if(colorToggle == 1){
+        console.log("Rainbow click");
+    }
+    else{
+        console.log('Grid Handler Error');
+    }
+    
 }
 
 function createGrid(gridSize){
