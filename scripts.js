@@ -15,7 +15,12 @@ createGrid(slider.value);
 
 //Add functions for clear|erase|colormode|rainbowmode|colorpicker
 function clearGrid(){
-
+    let child = gridContainer.lastElementChild;
+    while(child){
+        gridContainer.removeChild(child)
+        child = gridContainer.lastElementChild;
+    }
+    createGrid(slider.value);
 }
 function eraseGrid(){
 
