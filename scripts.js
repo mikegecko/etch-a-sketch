@@ -8,7 +8,8 @@ slider.addEventListener('input', sliderHandler);
 buttons.forEach(element => {
     element.addEventListener('click', btnHandler)
 });
-
+//Run colorMode once to initialize button styles
+colorMode();
 //Add grid components
 createGrid(slider.value);
 
@@ -51,20 +52,27 @@ function btnHandler(event){
             console.log("ERROR");
     }
 }
+
 function colorMode(event){
     const colorBtn = document.querySelector('#color');
     const rainbowBtn = document.querySelector('#rainbow');
-    if(event.target.id == 'color'){
-        event.target.style.backgroundColor = '#1c3550';
-        rainbowBtn.style.backgroundColor = '#616E7C';
-    }
-    if(event.target.id == 'rainbow'){
-        event.target.style.backgroundColor = '#1c3550';
-        colorBtn.style.backgroundColor = '#616E7C';
+    if(event == null || event == undefined){
+        colorBtn.style.backgroundColor = '#1c3550';
     }
     else{
-        console.log('ERROR');
+        if(event.target.id == 'color'){
+            event.target.style.backgroundColor = '#1c3550';
+            rainbowBtn.style.backgroundColor = '#616E7C';
+        }
+        if(event.target.id == 'rainbow'){
+            event.target.style.backgroundColor = '#1c3550';
+            colorBtn.style.backgroundColor = '#616E7C';
+        }
+        else{
+            console.log('ERROR');
+        }
     }
+    
 }
 
 function gridHandler(event){
