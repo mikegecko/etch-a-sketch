@@ -4,6 +4,7 @@ const sliderOutput = document.querySelector('.slider-value');
 const gridContainer = document.querySelector('.grid-container');
 const colorBtn = document.querySelector('#color');
 const rainbowBtn = document.querySelector('#rainbow');
+const eraseBtn = document.querySelector('#erase');
 let colorToggle = 0;
 let isDrawing = false;
 //Adding event handlers
@@ -43,7 +44,7 @@ function btnHandler(event){
             clearGrid();
             break;
         case "erase":
-            eraseGrid();
+            colorMode(event);
             break;
         case "color":
             colorMode(event);
@@ -65,12 +66,20 @@ function colorMode(event){
         if(event.target.id == 'color'){
             event.target.style.backgroundColor = '#1c3550';
             rainbowBtn.style.backgroundColor = '#616E7C';
+            eraseBtn.style.backgroundColor = '#616E7C'
             colorToggle = 0;
         }
         else if(event.target.id == 'rainbow'){
             event.target.style.backgroundColor = '#1c3550';
             colorBtn.style.backgroundColor = '#616E7C';
+            eraseBtn.style.backgroundColor = '#616E7C'
             colorToggle = 1;
+        }
+        else if(event.target.id == 'erase'){
+            event.target.style.backgroundColor = '#1c3550';
+            rainbowBtn.style.backgroundColor = '#616E7C';
+            colorBtn.style.backgroundColor = '#616E7C';
+            colorToggle = 2;
         }
         else{
             console.log('ERROR');
@@ -86,13 +95,13 @@ function gridHandler(event){
     
     if(isDrawing === true){
         if(colorToggle == 0){
-            console.log("click");
             event.target.style.backgroundColor = "black";
         }
         else if(colorToggle == 1){
-            console.log("Rainbow click");
             event.target.style.backgroundColor = randomColor();
         }
+        else if(colorToggle == 2)
+            event.target.style.backgroundColor = 'white';
         else{
             console.log('Grid Handler Error');
         }
