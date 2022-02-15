@@ -102,7 +102,6 @@ button:active{
     opacity: 0;
 }
 .footer{
-    /*i forgot how to do this properly */
     position: absolute;
     bottom: 0;
 }
