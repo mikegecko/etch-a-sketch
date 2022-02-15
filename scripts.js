@@ -5,7 +5,7 @@ const gridContainer = document.querySelector('.grid-container');
 const colorBtn = document.querySelector('#color');
 const rainbowBtn = document.querySelector('#rainbow');
 let colorToggle = 0;
-
+let isDrawing = false;
 //Adding event handlers
 slider.addEventListener('input', sliderHandler);
 buttons.forEach(element => {
@@ -13,11 +13,11 @@ buttons.forEach(element => {
 });
 //Run colorMode once to initialize button styles
 colorMode();
-//Add grid components
+//Add grid
 createGrid(slider.value);
 
 
-//Add functions for clear|erase|colormode|rainbowmode|colorpicker
+//Add functions for ✓clear|erase|✓colormode|✓rainbowmode|colorpicker
 function clearGrid(){
     let child = gridContainer.lastElementChild;
     while(child){
@@ -57,7 +57,6 @@ function btnHandler(event){
 }
 
 function colorMode(event){
-    
     if(event == null || event == undefined){
         colorBtn.style.backgroundColor = '#1c3550';
         colorToggle = 0;
@@ -84,17 +83,24 @@ function randomColor(){
     return("#"+rc);
 }
 function gridHandler(event){
-    if(colorToggle == 0){
-        console.log("click");
-        event.target.style.backgroundColor = "black";
-    }
-    else if(colorToggle == 1){
-        console.log("Rainbow click");
-        event.target.style.backgroundColor = randomColor();
+    
+    if(isDrawing === true){
+        if(colorToggle == 0){
+            console.log("click");
+            event.target.style.backgroundColor = "black";
+        }
+        else if(colorToggle == 1){
+            console.log("Rainbow click");
+            event.target.style.backgroundColor = randomColor();
+        }
+        else{
+            console.log('Grid Handler Error');
+        }
     }
     else{
-        console.log('Grid Handler Error');
+        return;
     }
+    
     
 }
 
@@ -107,6 +113,13 @@ function createGrid(gridSize){
         newDiv.style.userDrag = "none";
         newDiv.style.userDrag = "none";
         gridContainer.appendChild(newDiv);
-        newDiv.addEventListener('mousedown', gridHandler);
+        newDiv.addEventListener('mouseenter', gridHandler);
+        newDiv.addEventListener('mousedown', e => {
+            isDrawing = true;
+            gridHandler(e);
+        });
+        newDiv.addEventListener('mouseup', e => {
+            isDrawing = false;
+        });
     }
 }
