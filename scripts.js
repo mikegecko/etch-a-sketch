@@ -6,10 +6,31 @@ buttons.forEach(element => {
 });
 
 function btnHandler(event){
-    console.log(event.target.id);
+    //send each event to proper functions
+    switch(event.target.id){
+        case "clear":
+            clearGrid();
+            break;
+        case "erase":
+            eraseGrid();
+            break;
+        case "color":
+            //code
+            break;
+        case "rainbow":
+            //code
+            break;
+        default:
+            console.log("ERROR");
+    }
 }
 
 //Add grid components
 
-//Add functions for clear|eraser|colormode|rainbowmode|colorpicker
+//Add functions for clear|erase|colormode|rainbowmode|colorpicker
+function clearGrid(){
 
+}
+function eraseGrid(){
+
+}
