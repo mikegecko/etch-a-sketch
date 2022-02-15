@@ -79,7 +79,10 @@ function colorMode(event){
     }
     
 }
-
+function randomColor(){
+    let rc = Math.floor(Math.random()*16777215).toString(16);
+    return("#"+rc);
+}
 function gridHandler(event){
     if(colorToggle == 0){
         console.log("click");
@@ -87,6 +90,7 @@ function gridHandler(event){
     }
     else if(colorToggle == 1){
         console.log("Rainbow click");
+        event.target.style.backgroundColor = randomColor();
     }
     else{
         console.log('Grid Handler Error');
