@@ -28,11 +28,8 @@ function eraseGrid(){
 
 function sliderHandler(event){
     sliderOutput.innerHTML = slider.value + " x " + slider.value;
-    
-    /* Issue: Using the slider conitunes to add to grid 
-        Solution: Remove all grid items then add them back using new gridSize */
-                           
-    createGrid(slider.value);
+    clearGrid();               
+    //createGrid(slider.value);
 }
 
 function btnHandler(event){
