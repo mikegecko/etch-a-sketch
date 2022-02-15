@@ -51,9 +51,14 @@ button{
     white-space: nowrap;
     
 }
+
 button:hover{
     background-color: #7B8794;
-    color: black;
+    color: #121212;
+    transform: scale(1.1) perspective(1px)
+}
+button:active{
+    background-color: #9ba7b4;
 }
 
 .slide-container{

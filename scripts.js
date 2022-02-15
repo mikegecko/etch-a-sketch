@@ -42,13 +42,28 @@ function btnHandler(event){
             eraseGrid();
             break;
         case "color":
-            //code
+            colorMode(event);
             break;
         case "rainbow":
-            //code
+            colorMode(event);
             break;
         default:
             console.log("ERROR");
+    }
+}
+function colorMode(event){
+    const colorBtn = document.querySelector('#color');
+    const rainbowBtn = document.querySelector('#rainbow');
+    if(event.target.id == 'color'){
+        event.target.style.backgroundColor = '#1c3550';
+        rainbowBtn.style.backgroundColor = '#616E7C';
+    }
+    if(event.target.id == 'rainbow'){
+        event.target.style.backgroundColor = '#1c3550';
+        colorBtn.style.backgroundColor = '#616E7C';
+    }
+    else{
+        console.log('ERROR');
     }
 }
 
